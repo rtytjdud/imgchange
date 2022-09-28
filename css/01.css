@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    line-height: 1;
+}
+
+.main_visual {
+    height: 100vh;
+    position: relative;
+
+}
+
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지 비율 조절시켜주는 태그 
+    이미지 비율에 맞춰서 적용됨*/
+    display: block;
+    /* 스크롤바 생기면안되는데 생길경우 img의 틈때문 
+    블록요소로 변환해주면됨!!  */
+}
+
+.main_visual #btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0;
+    background-color: coral;
+    color: azure;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}

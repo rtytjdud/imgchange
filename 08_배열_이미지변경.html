@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 변경</title>
+    <link href="css/08.css" rel="stylesheet" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <section class="cont01">
+        <div>
+            <img id="bg_img" src="img/travel19.jpg" alt="여행">
+            <div class="info">
+                <strong>2022.09.26 월요일</strong>
+                <h3>컨텐츠 제목 작성</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aperiam excepturi fugiat in a optio
+                    nesciunt, rerum minima expedita at, pariatur praesentium amet esse ab non, possimus saepe
+                    cupiditate. Consequuntur?</p>
+                <button id="btn">이미지보기
+                    <span id="num_text">1</span>/3
+                </button>
+
+            </div><!-- .info end -->
+        </div>
+
+    </section><!-- cont01 end -->
+
+    <script>
+        let btn = document.getElementById('btn');
+        let sectionImg = document.getElementById('bg_img');
+
+        let img1 = 'img/travel19.jpg';
+        let img2 = 'img/travel18.jpg';
+        let img3 = 'img/travel17.jpg';
+        let imgList = [img1, img2, img3];
+
+        let i = 0;
+
+        let numText = document.getElementById('num_text');
+        let numList = [1, 2, 3];
+        let num = 0; //초기값 잡아주기
+
+        //변수명 btn을 클릭했을 때 이벤트 실행
+        //버튼을 클릭할 떄마다 i값을 증감; 
+        //그다음 조건문을 걸어줌 i값이 imgList가 가지는 갯수와 동일할 때
+        // i값은 0
+
+        // 변수명 sectionImg의 경로는 imgList로 가진다
+
+        btn.onclick = function () {
+            i++;
+            num++;
+
+            if (i >= imgList.length) { //총3
+                i = 0; //다시 i값은 0으로 돌려줍니다.
+                num = 0;
+            }
+            sectionImg.src = imgList[i];
+            //이미지 리스트의 값을 하나씩 불러오겠다. 
+            // img/travel17 요런 이미지형식이 담겨있는 변수가 imgList
+            //imgList의 값들이 순차적으로 불러와달라
+
+            numText.innerText = numList[num];
+            //변수numText 안에있는 글자를 변수명 numList가 가지고있는 값으로 적용을 시켜주겠다.  그런데 순번을 찾아서 순서대로 값을 찾아주겠다. []
+        }
+
+
+    </script>
+</body>
+
+</html>
